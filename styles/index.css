@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+
+#hero {
+  background-image: url('../public/images/hero.jpg');
+  height: 24rem;
+}
+
+#cart-div {
+  width: 300px;
+}
+
+#closeXsearch {
+  padding-left: 5px;
+}
+
+#close-cart-p {
+  margin-top: 2px;
+}
+
+#mobile-search-close-p {
+  margin-top: -20px;
+}
+
+/* Fix Algolia mobile-searchbox design issues */
+#mobilesearchdiv {
+  position: absolute;
+  height: 200px;
+}
+
+.ais-SearchBox-submit {
+  width: 48px;
+}
+
+.ais-SearchBox-submitIcon {
+  display: none;
+}
+
+.ais-SearchBox-reset {
+  margin-left: 10px;
+}
+
+@tailwind utilities;
