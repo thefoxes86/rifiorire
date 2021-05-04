@@ -1,11 +1,11 @@
-import Header from 'components/Header/Header.component';
-import IndexProducts from 'components/Product/IndexProducts.component';
-import LoadingSpinner from 'components/LoadingSpinner/LoadingSpinner.component';
-import PageTitle from 'components/Title/PageTitle.component';
+import Header from "components/Header/Header.component";
+import IndexProducts from "components/Product/IndexProducts.component";
+import LoadingSpinner from "components/LoadingSpinner/LoadingSpinner.component";
+import PageTitle from "components/Title/PageTitle.component";
 
-import { FETCH_ALL_PRODUCTS_QUERY } from 'utils/gql/GQL_QUERIES';
+import { FETCH_ALL_PRODUCTS_QUERY } from "utils/gql/GQL_QUERIES";
 
-import client from 'utils/apollo/ApolloClient.js';
+import client from "utils/apollo/ApolloClient.js";
 
 /**
  * Displays all of the products.
@@ -13,13 +13,13 @@ import client from 'utils/apollo/ApolloClient.js';
  * Displays loading spinner while loading.
  * Shows an error if the server is down or unreachable.
  */
-const Produkter = ({ products }) => {
+const Thanks = ({ products }) => {
   const error = false;
 
   return (
     <>
-      <Header title="- Produkter" />
-      <PageTitle title="Produkter" />
+      <Header title="Prodotti" />
+      <PageTitle title="Prodotti" />
 
       {products && <IndexProducts products={products} />}
 
@@ -41,7 +41,7 @@ const Produkter = ({ products }) => {
   );
 };
 
-export default Produkter;
+export default Thanks;
 
 export async function getStaticProps() {
   const result = await client.query({

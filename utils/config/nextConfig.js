@@ -3,12 +3,12 @@
 // Live details
 
 export const WOO_CONFIG = {
-  GRAPHQL_URL: 'https://woo.dfweb.no/graphql',  
-  ALGOLIA_INDEX_NAME: 'dfweb',
+  GRAPHQL_URL: "https://rifiorire.com/graphql",
+  ALGOLIA_INDEX_NAME: "dfweb",
   PLACEHOLDER_SMALL_IMAGE_URL:
-    'https://res.cloudinary.com/duelisue0/image/upload/v1600187495/Nextjs-Woocommerce/337_utsb7h.jpg',
+    "https://res.cloudinary.com/duelisue0/image/upload/v1600187495/Nextjs-Woocommerce/337_utsb7h.jpg",
   PLACEHOLDER_LARGE_IMAGE_URL:
-    'https://res.cloudinary.com/duelisue0/image/upload/v1595541416/Nextjs-Woocommerce/placeholder-616-616_beecp5.jpg',
+    "https://res.cloudinary.com/duelisue0/image/upload/v1595541416/Nextjs-Woocommerce/placeholder-616-616_beecp5.jpg",
 };
 
 // Development details

@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import { v4 as uuidv4 } from 'uuid';
+import Link from "next/link";
+import { v4 as uuidv4 } from "uuid";
 
-import WOO_CONFIG from 'utils/config/nextConfig';
+import WOO_CONFIG from "utils/config/nextConfig";
 
-import { filteredVariantPrice } from 'utils/functions/functions';
+import { filteredVariantPrice } from "utils/functions/functions";
 
 /**
  * Displays all of the products as long as length is defined.
@@ -33,7 +33,7 @@ const IndexProducts = ({ products }) => {
                   className="flex flex-col p-6 md:w-1/2 xl:w-1/4"
                 >
                   <Link
-                    href={`/produkt/${encodeURIComponent(
+                    href={`/prodotto/${encodeURIComponent(
                       slug
                     )}?id=${encodeURIComponent(databaseId)}`}
                   >
@@ -57,7 +57,7 @@ const IndexProducts = ({ products }) => {
                   </Link>
 
                   <Link
-                    href={`/produkt/${encodeURIComponent(
+                    href={`/prodotto/${encodeURIComponent(
                       slug
                     )}?id=${encodeURIComponent(databaseId)}`}
                   >
@@ -78,7 +78,7 @@ const IndexProducts = ({ products }) => {
                           {!variations && salePrice}
                         </div>
                         <div className="pt-1 ml-2 text-gray-900 line-through">
-                          {variations && filteredVariantPrice(price, 'right')}
+                          {variations && filteredVariantPrice(price, "right")}
                           {!variations && regularPrice}
                         </div>
                       </div>

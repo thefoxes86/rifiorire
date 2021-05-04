@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import { v4 as uuidv4 } from 'uuid';
+import Link from "next/link";
+import { v4 as uuidv4 } from "uuid";
 
 /**
  * Map over the categories and display them individually.
@@ -14,8 +14,8 @@ const Categories = ({ categories }) => {
           {categories.map(({ id, name, slug }) => (
             <Link
               key={uuidv4()}
-              as={`/kategori/${slug}?id=${id}`}
-              href="/kategori/[id]"
+              as={`/categoria/${slug}?id=${id}`}
+              href="/categoria/[id]"
             >
               <div className="p-6 cursor-pointer">
                 <div className="flex items-center justify-center w-full h-16 text-center border border-gray-300 rounded-lg shadow hover:shadow-outline">

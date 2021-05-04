@@ -1,6 +1,6 @@
-import Head from 'next/head';
-
-import Navbar from './Navbar.component';
+import Head from "next/head";
+import { Helmet } from "react-helmet";
+import Navbar from "./Navbar.component";
 
 /**
  * Header for the application.
@@ -9,16 +9,16 @@ import Navbar from './Navbar.component';
 const Header = ({ title }) => {
   return (
     <>
-      <Head>
-        <title>Nextjs Ecommerce with WooCommerce {title ? title : ''}</title>
+      <Helmet>
+        <title>{title ? title : ""}</title>
         <meta name="description" content="WooCommerce webshop" />
         <meta name="keywords" content="Ecommerce, WooCommerce" />
         <meta
           property="og:title"
-          content="Nextjs Ecommerce with Woocommerce"
+          content={title ? title : ""}
           key="pagetitle"
         />
-      </Head>
+      </Helmet>
       <Navbar />
     </>
   );

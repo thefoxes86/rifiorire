@@ -1,9 +1,9 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import Cart from '../Cart/Cart.component';
-import Search from '../AlgoliaSearch/AlgoliaSearchBox.component';
-import SVGMobileSearchIcon from '../SVG/SVGMobileSearchIcon.component';
-import Hamburger from './Hamburger.component';
+import Cart from "../Cart/Cart.component";
+import Search from "../AlgoliaSearch/AlgoliaSearchBox.component";
+import SVGMobileSearchIcon from "../SVG/SVGMobileSearchIcon.component";
+import Hamburger from "./Hamburger.component";
 
 /**
  * Navigation for the application.
@@ -21,16 +21,16 @@ const Navbar = () => {
           >
             <ul className="items-center justify-between pt-4 text-base text-gray-700 md:flex md:pt-0">
               <li>
-                <Link href="/produkter">
+                <Link href="/prodotti">
                   <a className="inline-block py-2 pr-4 text-xl font-bold no-underline hover:underline">
-                    Produkter
+                    Prodotti
                   </a>
                 </Link>
               </li>
               <li>
-                <Link href="/kategorier">
+                <Link href="/categorie">
                   <a className="inline-block py-2 pr-4 text-xl font-bold no-underline hover:underline">
-                    Kategorier
+                    Categorie
                   </a>
                 </Link>
               </li>
@@ -52,7 +52,7 @@ const Navbar = () => {
                     aria-label="Nettbutikk logo"
                   />
                 </svg>
-                NETTBUTIKK
+                Rifiorire
               </a>
             </Link>
           </div>
