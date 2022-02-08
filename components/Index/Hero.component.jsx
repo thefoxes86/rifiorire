@@ -1,27 +1,57 @@
+import { useEffect, useState } from "react";
+import CurvedTextIta from "components/SVG/CurvedTextIta.component";
+import CurvedTextEng from "components/SVG/CurvedTextEng.component";
+
 /**
  * Initial hero content displayed on the front page, under the navigation bar.
  */
 const Hero = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <>
-      <section
-        id="hero"
-        className="flex w-full pt-10 mx-auto bg-right bg-cover mt-36 md:pt-0 md:items-center"
-      >
-        <div className="container mx-auto">
-          <div className="flex flex-col items-start justify-center w-full px-6 tracking-wide lg:w-1/2">
-            <h1 className="p-4 my-4 text-2xl text-white bg-black rounded-lg">
-              Stripete Zig Zag Pute Sett
-            </h1>
-
-            <a
-              className="inline-block px-6 py-3 text-xl leading-relaxed text-white uppercase bg-black rounded-lg hover:underline"
-              href="#"
-            >
-              se utvalget
-            </a>
+      <section id="hero" className="grid grid-cols-12 w-full h-screen mt-32">
+        <div
+          className="col-span-2 h-full bg-cover"
+          style={{ backgroundImage: `url(images/col-hero-1.png)` }}
+        ></div>
+        <div
+          className="col-span-2 h-full bg-cover"
+          style={{ backgroundImage: `url(images/col-hero-2.png)` }}
+        ></div>
+        <div className="col-span-4 h-full flex align-center justify-center items-center">
+          <div
+            className="absolute pt-5 pl-5"
+            style={{ transform: `rotate(${scrollPosition * 0.05}deg)` }}
+          >
+            <CurvedTextIta />
+          </div>
+          <div
+            className="absolute px-2"
+            style={{ transform: `rotate(-${scrollPosition * 0.05}deg)` }}
+          >
+            <CurvedTextEng />
           </div>
         </div>
+        <div
+          className="col-span-2 h-full bg-cover"
+          style={{ backgroundImage: `url(images/col-hero-4.png)` }}
+        ></div>
+        <div
+          className="col-span-2 h-full bg-cover"
+          style={{ backgroundImage: `url(images/col-hero-5.png)` }}
+        ></div>
       </section>
     </>
   );

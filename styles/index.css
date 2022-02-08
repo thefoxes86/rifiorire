@@ -1,10 +1,24 @@
 @tailwind base;
 @tailwind components;
 
-#hero {
-  background-image: url('../public/images/hero.jpg');
-  height: 24rem;
+
+:root {
+  --primary-color: #E0C5AC;
+  --secondary-color: #C19473;
 }
+
+#hero {
+  background-color: var(--primary-color);
+  height: calc(100vh - 8rem);
+}
+
+#hero div:nth-child(1) {}
+#hero div:nth-child(2) {}
+#hero div:nth-child(3) {
+  background-color: var(--secondary-color);
+}
+#hero div:nth-child(4) {}
+#hero div:nth-child(5) {}
 
 #cart-div {
   width: 300px;

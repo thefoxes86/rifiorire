@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 /**
  * Loading spinner, shows while loading products or categories.
@@ -41,5 +41,11 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 110px;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
 `;

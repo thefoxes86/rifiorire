@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { useSpring, animated } from 'react-spring';
-import Link from 'next/link';
+import { useState } from "react";
+import { useSpring, animated } from "react-spring";
+import Link from "next/link";
 
 /**
  * Shows the mobile menu.
@@ -12,25 +12,25 @@ const Hamburger = () => {
   const hamburgerSlideDownAnimation = useSpring({
     to: [
       {
-        opacity: isExpanded ? 1 : 0,
-        marginTop: isExpanded ? '170px' : '-180px',
+        opacity: isExpanded ? 0.9 : 0,
+        top: isExpanded ? "132px" : "-180px",
       },
     ],
     from: {
-      opacity: isExpanded ? 1 : 0,
-      marginTop: isExpanded ? '170px' : '-180px',
+      opacity: isExpanded ? 0.9 : 0,
+      top: isExpanded ? "132px" : "-180px",
     },
   });
 
   const showHamburgerHideXAnimation = useSpring({
     to: [
       {
-        opacity: isExpanded ? 0 : 1,
-        display: isExpanded ? 'none' : 'inline',
+        opacity: isExpanded ? 0 : 0.9,
+        display: isExpanded ? "inline" : "inline",
       },
     ],
     from: {
-      opacity: isExpanded ? 0 : 1,
+      opacity: isExpanded ? 0 : 0.9,
     },
   });
 
@@ -38,12 +38,14 @@ const Hamburger = () => {
     to: [
       {
         opacity: isExpanded ? 1 : 0,
-        display: isExpanded ? 'inline' : 'none',
+        display: isExpanded ? "inline" : "inline",
+        marginLeft: isExpanded ? -20 : -30,
       },
     ],
     from: {
       opacity: isExpanded ? 0 : 1,
-      display: isExpanded ? 'none' : 'inline',
+      display: isExpanded ? "inline" : "inline",
+      marginLeft: isExpanded ? -20 : -30,
     },
   });
 
@@ -52,7 +54,7 @@ const Hamburger = () => {
       <label
         htmlFor="menu-toggle"
         aria-label="Meny"
-        className="block cursor-pointer md:hidden"
+        className="block cursor-pointer "
       >
         <animated.svg
           id="hamburgersvg"
@@ -83,7 +85,7 @@ const Hamburger = () => {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="feather feather-x"
+          className="feather feather-x z-20 absolute"
         >
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -94,43 +96,13 @@ const Hamburger = () => {
         <animated.div
           style={hamburgerSlideDownAnimation}
           id="mobile-menu"
-          className="absolute right-0 z-10 w-full text-center text-black bg-white "
+          className="absolute right-0 z-10 w-full text-center text-black bg-white"
         >
-          <ul>
-            <li className="w-full p-4 border-t border-gray-400 border-solid rounded">
-              <Link href="/">
-                <a
-                  className="inline-block px-4 py-2 no-underline hover:text-black hover:underline"
-                  href="#"
-                >
-                  Hjem
-                </a>
-              </Link>
-            </li>
-            <li className="w-full p-4 border-t border-gray-400 border-solid rounded">
-              <Link href="/produkter">
-                <a
-                  className="inline-block px-4 py-2 no-underline hover:text-black hover:underline"
-                  href="#"
-                >
-                  Produkter
-                </a>
-              </Link>
-            </li>
-            <li
-              id="mobile-li"
-              className="w-full p-4 border-t border-b border-gray-400 border-solid rounded"
-            >
-              <Link href="/kategorier">
-                <a
-                  className="inline-block px-4 py-2 no-underline hover:text-black hover:underline"
-                  href="#"
-                >
-                  Kategorier
-                </a>
-              </Link>
-            </li>
-          </ul>
+          <div class="grid grid-cols-6 gap-4">
+            <div className="pt-20 pb-10 p-5">List 1</div>
+            <div className="pt-20 pb-10 p-5">List 4</div>
+            <div className="pt-20 pb-10 p-5">List 3</div>
+          </div>
         </animated.div>
       )}
     </>
