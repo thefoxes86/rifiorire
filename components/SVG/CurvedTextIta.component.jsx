@@ -7,6 +7,7 @@ const CurvedTextIta = () => {
       width="362.034"
       height="356"
       viewBox="0 0 362.034 356"
+      className="w-64 md:w-auto"
     >
       <circle
         id="Ellipse_1"

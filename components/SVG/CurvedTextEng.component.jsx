@@ -7,6 +7,7 @@ const CurvedTextEng = () => {
       width="300.383"
       height="300.097"
       viewBox="0 0 300.383 300.097"
+      className=" w-56 mr-2 md:w-auto"
     >
       <g id="Group_3" data-name="Group 3" transform="translate(0 146.018)">
         <path

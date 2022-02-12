@@ -21,16 +21,19 @@ const Hero = () => {
   }, []);
   return (
     <>
-      <section id="hero" className="grid grid-cols-12 w-full h-screen mt-32">
+      <section
+        id="hero"
+        className="grid grid-cols-1 w-full md:h-screen mt-32 md:grid-cols-12 bg-primary"
+      >
         <div
-          className="col-span-2 h-full bg-cover"
-          style={{ backgroundImage: `url(images/col-hero-1.png)` }}
+          className="col-span-1 h-96 md:h-full md:col-span-1  bg-cover"
+          style={{ backgroundImage: `url(images/col-hero-1.gif)` }}
         ></div>
         <div
-          className="col-span-2 h-full bg-cover"
+          className="col-span-1 h-96 md:col-span-3 md:h-full bg-cover"
           style={{ backgroundImage: `url(images/col-hero-2.png)` }}
         ></div>
-        <div className="col-span-4 h-full flex align-center justify-center items-center">
+        <div className="col-span-1 md:col-span-4 h-96 md:h-full flex align-center justify-center items-center">
           <div
             className="absolute pt-5 pl-5"
             style={{ transform: `rotate(${scrollPosition * 0.05}deg)` }}
@@ -45,11 +48,11 @@ const Hero = () => {
           </div>
         </div>
         <div
-          className="col-span-2 h-full bg-cover"
+          className="col-span-1 h-96 md:col-span-2 md:h-full bg-cover"
           style={{ backgroundImage: `url(images/col-hero-4.png)` }}
         ></div>
         <div
-          className="col-span-2 h-full bg-cover"
+          className="col-span-1 h-96 md:col-span-2 md:h-full bg-cover"
           style={{ backgroundImage: `url(images/col-hero-5.png)` }}
         ></div>
       </section>

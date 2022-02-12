@@ -1,15 +1,41 @@
 @tailwind base;
 @tailwind components;
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,700;0,900;1,400&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+}
 
 
 :root {
   --primary-color: #E0C5AC;
   --secondary-color: #C19473;
+  --violet: #8B2121;
+}
+
+.color-violet {
+  color: var(--violet)
+}
+
+.color-primary {
+  color: var(--primary-color)
+}
+.color-secondary {
+  color: var(--secondary-color)
+}
+
+.bg-violet {
+  background-color: var(--violet)
+}
+
+.bg-primary {
+  background-color: var(--primary-color)
+}
+.bg-secondary {
+  background-color: var(--secondary-color)
 }
 
 #hero {
-  background-color: var(--primary-color);
-  height: calc(100vh - 8rem);
 }
 
 #hero div:nth-child(1) {}
