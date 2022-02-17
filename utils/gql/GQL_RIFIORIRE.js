@@ -6,6 +6,36 @@ export const GQL_RIFIORIRECASA = gql`
       id
       title(format: RENDERED)
       content(format: RENDERED)
+      pagebuilder {
+        category {
+          title
+          url
+        }
+        category2 {
+          title
+          url
+        }
+        linkSection1 {
+          url
+        }
+        linkSection2 {
+          url
+        }
+        imageCategory1 {
+          srcSet(size: LARGE)
+          link
+        }
+        imageCategory2 {
+          srcSet(size: LARGE)
+          link
+        }
+        textSection2
+        textSections1
+        titleCategory1
+        titleCategory2
+        titleSection1
+        titleSection2
+      }
     }
     firstCategory: products(first: 2, where: { categoryId: 18 }) {
       nodes {
@@ -15,6 +45,7 @@ export const GQL_RIFIORIRECASA = gql`
         averageRating
         slug
         description
+        date
         image {
           id
           uri

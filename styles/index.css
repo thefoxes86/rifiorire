@@ -11,8 +11,12 @@ body {
   --primary-color: #E0C5AC;
   --secondary-color: #C19473;
   --violet: #8B2121;
+  --brown: #80493A;
 }
 
+.color-brown {
+  color: var(--brown)
+}
 .color-violet {
   color: var(--violet)
 }
@@ -27,6 +31,9 @@ body {
 .bg-violet {
   background-color: var(--violet)
 }
+.bg-brown {
+  background-color: var(--brown)
+}
 
 .bg-primary {
   background-color: var(--primary-color)
@@ -35,8 +42,29 @@ body {
   background-color: var(--secondary-color)
 }
 
-#hero {
+.border-brown {
+  border-color: var(--brown)
 }
+.border-violet {
+  border-color: var(--violet)
+}
+
+.border-primary {
+  border-color: var(--primary-color)
+}
+.border-secondary {
+  border-color: var(--secondary-color)
+}
+
+.msl {
+  border-radius: 0 !important;
+  border-top: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 1px solid black !important;
+  margin: 10px 0 !important;
+}
+
 
 #hero div:nth-child(1) {}
 #hero div:nth-child(2) {}
@@ -79,5 +107,14 @@ body {
 .ais-SearchBox-reset {
   margin-left: 10px;
 }
+
+
+/* ACCORDION */
+.Collapsible {
+  border-bottom: 1px solid black;
+  padding: 15px 0;
+  width: 50%;
+}
+
 
 @tailwind utilities;

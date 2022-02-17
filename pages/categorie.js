@@ -16,14 +16,11 @@ const CategoryPage = ({ categories }) => {
   return (
     <>
       <Header title="Categoria" />
-      <PageTitle title="Categoria" />
 
       {categories && <Categories categories={categories} />}
 
       {!categories && !error && (
         <div className="h-64 mt-8 text-2xl text-center">
-          Laster ...
-          <br />
           <LoadingSpinner />
         </div>
       )}
@@ -31,7 +28,7 @@ const CategoryPage = ({ categories }) => {
       {/* Display error message if error occured */}
       {error && (
         <div className="h-12 mt-20 text-2xl text-center">
-          Feil under lasting av kategorier ...
+          Non ci sono prodotti in questa categoria
         </div>
       )}
     </>

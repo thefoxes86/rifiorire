@@ -1,16 +1,16 @@
 /*eslint complexity: ["error", 6]*/
 
-import { useState, useContext } from 'react';
-import { v4 as uuidv4 } from 'uuid';
-import { useQuery, useMutation } from '@apollo/client';
+import { useState, useContext } from "react";
+import { v4 as uuidv4 } from "uuid";
+import { useQuery, useMutation } from "@apollo/client";
 
-import { AppContext } from 'utils/context/AppContext';
-import LoadingSpinner from 'components/LoadingSpinner/LoadingSpinner.component';
+import { AppContext } from "utils/context/AppContext";
+import LoadingSpinner from "components/LoadingSpinner/LoadingSpinner.component";
 
-import { GET_CART } from 'utils/gql/GQL_QUERIES';
-import { ADD_TO_CART } from 'utils/gql/GQL_MUTATIONS';
+import { GET_CART } from "utils/gql/GQL_QUERIES";
+import { ADD_TO_CART } from "utils/gql/GQL_MUTATIONS";
 
-import { getFormattedCart } from 'utils/functions/functions';
+import { getFormattedCart } from "utils/functions/functions";
 
 /**
  * Display and process product object when we click on the Add To Cart button
@@ -36,36 +36,34 @@ const AddToCartButton = ({ product }) => {
     onCompleted: () => {
       // Update cart in the localStorage.
       const updatedCart = getFormattedCart(data);
-      localStorage.setItem('woocommerce-cart', JSON.stringify(updatedCart));
+      localStorage.setItem("woocommerce-cart", JSON.stringify(updatedCart));
       // Update cart data in React Context.
       setCart(updatedCart);
     },
   });
 
-  const [
-    addToCart,
-    { loading: addToCartLoading, error: addToCartError },
-  ] = useMutation(ADD_TO_CART, {
-    variables: {
-      input: productQueryInput,
-    },
-    onCompleted: () => {
-      // If error.
-      if (addToCartError) {
-        setRequestError(addToCartError.graphQLErrors[0].message);
-      }
-      // Update the cart with new values in React context.
-      refetch();
-      // Show View Cart Button
-      setShowViewCart(true);
-      setshowAddToCart(true);
-    },
-    onError: (error) => {
-      if (error) {
-        setRequestError(error);
-      }
-    },
-  });
+  const [addToCart, { loading: addToCartLoading, error: addToCartError }] =
+    useMutation(ADD_TO_CART, {
+      variables: {
+        input: productQueryInput,
+      },
+      onCompleted: () => {
+        // If error.
+        if (addToCartError) {
+          setRequestError(addToCartError.graphQLErrors[0].message);
+        }
+        // Update the cart with new values in React context.
+        refetch();
+        // Show View Cart Button
+        setShowViewCart(true);
+        setshowAddToCart(true);
+      },
+      onError: (error) => {
+        if (error) {
+          setRequestError(error);
+        }
+      },
+    });
 
   const handleAddToCartClick = () => {
     setRequestError(null);
@@ -82,9 +80,9 @@ const AddToCartButton = ({ product }) => {
     <>
       <button
         onClick={handleAddToCartClick}
-        className={`px-4 py-2 font-bold bg-white border border-gray-400 border-solid rounded hover:bg-gray-400 ${fadeInButton} ${fadeOutButton}`}
+        className={`px-20 py-3 uppercase font-thin bg-secondary text-white hover:bg-primary ${fadeInButton} ${fadeOutButton}`}
       >
-        KJØP
+        ADD TO CART
       </button>
 
       {addToCartLoading && (

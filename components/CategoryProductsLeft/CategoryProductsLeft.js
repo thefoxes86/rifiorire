@@ -9,14 +9,15 @@ const CategoryProductsLeft = ({ title, img, link, products }) => {
         <h3 className="text-white text-6xl absolute font-thin tracking-wide mb-5 z-10 md:pl-30">
           {title}
         </h3>
-        <Link href={link}>
+        <Link href={link.url || "#"}>
           <a>
             <ArrayCategory />
           </a>
         </Link>
         <img
-          className="w-2/4 bottom-10 z-0 md:w-2/4 md:left-2/3 md:absolute md:bottom-10"
-          src="./images/img-category.png"
+          className="w-2/4 bottom-10 z-0 md:w-2/5 md:left-2/3 md:absolute md:bottom-10"
+          src={img.link || "./images/img-category.png"}
+          srcSet={img.srcSet}
         />
       </div>
       <div className="md:col-span-1"></div>

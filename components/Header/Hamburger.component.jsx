@@ -7,7 +7,7 @@ import Link from "next/link";
  * Shows a X when mobile menu is expanded.
  * Uses React-spring for animations.
  */
-const Hamburger = () => {
+const Hamburger = ({ items }) => {
   const [isExpanded, setisExpanded] = useState(false);
   const hamburgerSlideDownAnimation = useSpring({
     to: [
@@ -99,6 +99,15 @@ const Hamburger = () => {
           className="absolute right-0 z-10 w-full text-center text-black bg-white"
         >
           <div class="grid grid-cols-6 gap-4">
+            {items &&
+              items.map(
+                ({ label, parentId, path }) =>
+                  parentId === null && (
+                    <div className="pt-20 pb-10 p-5">
+                      <h3 className="font-bold">{label}</h3>
+                    </div>
+                  )
+              )}
             <div className="pt-20 pb-10 p-5">List 1</div>
             <div className="pt-20 pb-10 p-5">List 4</div>
             <div className="pt-20 pb-10 p-5">List 3</div>

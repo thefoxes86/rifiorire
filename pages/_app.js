@@ -12,6 +12,7 @@ import "nprogress/nprogress.css";
 import "components/SVG/heart.css";
 
 import client from "utils/apollo/ApolloClient";
+import Header from "components/Header/Header.component";
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
@@ -22,6 +23,7 @@ const App = ({ Component, pageProps }) => {
     <>
       <ApolloProvider client={client}>
         <AppProvider>
+          <Header />
           <Component {...pageProps} />
           <Footer />
         </AppProvider>

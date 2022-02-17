@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const GET_SINGLE_PRODUCT = gql`
   query Product($id: ID!) {
@@ -114,6 +114,7 @@ export const FETCH_ALL_PRODUCTS_QUERY = gql`
         name
         onSale
         slug
+        date
         image {
           sourceUrl
         }
@@ -144,7 +145,7 @@ export const FETCH_ALL_PRODUCTS_QUERY = gql`
  */
 export const FETCH_ALL_CATEGORIES_QUERY = gql`
   query Categories {
-    productCategories(first: 20) {
+    productCategories {
       nodes {
         id
         name
@@ -167,6 +168,7 @@ export const GET_PRODUCTS_FROM_CATEGORY = gql`
           averageRating
           slug
           description
+          date
           image {
             id
             uri
